@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid #000; /* Add a border to make it visible initially */
+    color: #000; /* Set the initial text color */
+    transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
+    font-size: 24px;
+    margin:15px;
+    padding: 15px;
+}
+
+button:hover {
+    background-color: black;
+    color: rgb(34, 154, 229);
+    transform: scale(1.03);
+}

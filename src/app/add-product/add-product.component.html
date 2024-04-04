@@ -1,0 +1,61 @@
+<div class="main-card">
+    <div class="card">
+        <h1 class="heading" style="text-align: center; z-index: 1;">Add New Product</h1>
+        <img src="assets/addPForm2.png" alt="Card Image">
+      
+        <div>
+            <!-- <p class="message-success">Product is successfully added</p> -->
+        </div>
+    </div>
+z
+    <div class="container">
+        <form class="form" #addProductForm="ngForm" (ngSubmit)="submit(addProductForm.value)" novalidate>
+            <div class="form-group row">
+                <label for="productCategory" class="col-sm-2 col-form-label">Enter Product Category</label>
+                <div class="col-sm-10">
+                    <select id="productCategory" class="form-control-alternative">
+                        <option value="" disabled selected>Select Product Category</option>
+                        <option id="productCategory" *ngFor="let p of productCategory" [value]="p.value">{{ p.label }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="image" class="col-sm-2 col-form-label">Upload Product Photo</label>
+                <div class="col-sm-10">
+                    <input type="file" ngModel name="image" class="form-control" id="image" placeholder="Enter Product Photos" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="productName" class="col-sm-2 col-form-label">Enter Product Name</label>
+                <div class="col-sm-10">
+                    <input type="text" ngModel name="productName" class="form-control" id="productName" placeholder="Enter Product Name" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="price" class="col-sm-2 col-form-label">Price</label>
+                <div class="col-sm-10">
+                    <input type="number" ngModel name="price" class="form-control" id="price" placeholder="Enter Product Price" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="color" class="col-sm-2 col-form-label">Color</label>
+                <div class="col-sm-10">
+                    <input type="text" ngModel name="color" class="form-control" id="color" placeholder="Enter Product Color" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="desc" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea ngModel name="desc" class="form-control" id="desc" placeholder="Enter Product Description" required></textarea>
+                </div>
+            </div>
+
+            <button class="btn" type="submit">ADD</button>
+        </form>
+    </div>
+</div>

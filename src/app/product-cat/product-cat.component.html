@@ -1,0 +1,309 @@
+<main>
+  <div class="featured">
+    <h2>Nike Invincible 3</h2>
+   <div class="featured__description">
+      Men's Road Running Shoes
+    </div>
+
+    <div class="featured__buttons">
+      <!-- <button class="button__play"><i class="fas fa-play"></i>Shop Now</button> -->
+      <button class="button__play">Shop Now</button>
+      <button>Explore in Diff. Colors</button>
+    </div>
+  </div>
+</main>
+
+  <!-- OFFCANVAS -->
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title" id="offcanvas-basic-title"> FILTER</h4>
+
+      <!-- CLOSE BUTTON -->
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <div class="mb-3">
+        <form>
+          <label>
+            <input type="radio" name="gender" value="male">
+            Featured
+          </label>
+
+          <label>
+            <input type="radio" name="gender" value="female">
+            Newest
+          </label>
+
+          <label>
+            <input type="radio" name="gender" value="other">
+            Price - Low to High
+          </label>
+
+          <label>
+            <input type="radio" name="gender" value="other">
+            Price - High to Low
+          </label>
+        </form>
+        <br>
+
+        <!-- *************************************** -->
+        <button
+          type="button"
+          class="btn"
+          (click)="toggleCollapse(1)"
+          [attr.aria-expanded]="!isCollapsed1"
+          aria-controls="collapseGender"
+        >
+          GENDER
+
+          <!-- collapse button -->
+
+          <i class="fa-solid fa-angle-down fa-rotate-0"></i>
+        </button>
+        <!-- toggle body -->
+        <div #collapseGender="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+          <div class="card">
+            <div class="card-body">
+              <label>
+                <input type="checkbox" name="option1" value="Option 1">
+                Male
+              </label>
+
+              <label>
+                <input type="checkbox" name="option2" value="Option 2">
+                Female
+              </label>
+
+              <label>
+                <input type="checkbox" name="option3" value="Option 3">
+                Unisex
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- ANOTHER FILTER  -->
+        <button
+          type="button"
+          class="btn"
+          (click)="toggleCollapse(2)"
+          [attr.aria-expanded]="!isCollapsed2"
+          aria-controls="collapseKids"
+        >
+          KIDS
+
+          <!-- collapse button -->
+
+          <i class="fa-solid fa-angle-down fa-rotate-0"></i>
+        </button>
+        <!-- toggle body -->
+        <div #collapseKids="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+          <div class="card">
+            <div class="card-body">
+              <label>
+                <input type="checkbox" name="kidsOption1" value="Option 1">
+                Boys
+              </label>
+
+              <label>
+                <input type="checkbox" name="kidsOption2" value="Option 2">
+                Girls
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- ANOTHER FILTER  -->
+        <button
+          type="button"
+          class="btn"
+          (click)="toggleCollapse(3)"
+          [attr.aria-expanded]="!isCollapsed3"
+          aria-controls="collapseBrands"
+        >
+          BRANDS
+
+          <!-- collapse button -->
+
+          <i class="fa-solid fa-angle-down fa-rotate-0"></i>
+        </button>
+        <!-- toggle body -->
+        <div #collapseBrands="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+          <div class="card">
+            <div class="card-body">
+              <label>
+                <input type="checkbox" name="brandsOption1" value="Option 1">
+                XYZ
+              </label>
+
+              <label>
+                <input type="checkbox" name="brandsOption2" value="Option 2">
+                ABC
+              </label>
+
+              <label>
+                <input type="checkbox" name="brandsOption3" value="Option 3">
+                VWY
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- SAVE FILTER BUTTON -->
+
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-dark" (click)="offcanvas.close('Save click')">Apply Filter</button>
+      </div>
+    </div>
+  </ng-template>
+
+<!-- OFFCANVAS TOGGLE VISIBILITY BUTTON -->
+
+<button class="btn btn-lg btn-outline filter" (click)="open(content)">Sort & Filter <i class="fa-solid fa-filter"></i></button>
+
+<hr />
+
+<pre>{{ closeResult }}</pre>
+
+<!-- **********      TRENDING PRODUCTS     ****************-->
+   
+<!-- <div>
+  <div></div>
+    <span class="cat"></span>
+    <span class ="prod-title">Nike Air Max 90 LV8</span>
+    <span class="prod-desc">Women's Shoes</span>
+    
+    <span class="price">MRP: Rs.</span>
+</div> -->
+
+<!-- product-display.component.html -->
+
+  <!-- <div  class="main-prod-card">
+    <div class="prod-card col-sm-3" *ngFor="let item of prod">
+      <img src="{{item.image}}" alt="{{ item.title }}">
+      <div class="prod-card-content" [style.backgroundImage]="'url(' + item.image + ')'"> -->
+
+      <!-- <span class="prod-cat">{{ item.category }}</span>
+      <span class="prod-title">{{ item.title }}</span>
+      <span class="prod-desc">{{ item.description }}</span>
+      <div class="prod-price">
+        <span class="price">MRP: Rs. {{ item.price }}</span>
+      </div>
+      
+    </div>
+  </div> -->
+
+  <div id="imageC" style="height: 400; width: 300px; display: flex; padding: 5px; margin: 5px;" *ngFor="let item of prod">
+    <img src="{{item.image}}" alt="">
+
+ </div>
+
+  <div class="container ">
+
+    <div class="product-list-wrapper">
+        <!-- <h1>Our Trending Products</h1> -->
+        <div class="row">
+
+            <div class="col-sm-3" *ngFor="let item of prod" style="margin: 10px;">
+                <div class="product-item">
+                  <div>    
+                    <!-- cart and wishlist icon -->
+                    <ul style="display: flex; list-style: none; margin: 0px; padding: 0px;">
+                    <li><a routerLink="/">
+                      <i class="fas fa-heart" style="color: black;"></i>
+                    </a></li>
+                    &nbsp;
+              
+                    <li>
+                        <a routerLink="/">
+                          <i class="fas fa-shopping-cart"  style="color: black;"></i>
+                      </a>
+                   </li>
+                  </ul>
+                </div>
+                    <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/51d3beba-ea5c-4ee6-b702-ba54167ac880/air-jordan-1-mid-se-shoes-XkFP30.png" alt="" style="max-width: 100%; height: auto;">
+
+                    <div class="product-details">
+                      <h6 class="prod-title">{{item.title}}</h6>
+
+                        <!-- product-details -->
+
+                        <div class="product-price-color">
+
+                            <div class="product-price">
+                                <p>
+                                    <span class="l">Description: </span>
+                                    <span class="r">{{item.title}} </span>
+                                </p>
+                            </div>
+
+                            <div class="product-color">
+                                <p>
+                                    <span class="l">Color: </span>
+                                    <span class="r">{{item.color}} </span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="product-footer">
+                        <a (click)="openXl(content)" style="cursor: pointer;">View</a>
+                        <a routerLink="" style="text-align: right;">Rs. 10,000</a>
+                        <span class="r">{{item.price}} </span>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- 
+=============================================== -->
+<ng-template #cont let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Modal title</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>One fine body&hellip;</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
+<ng-template #longContent let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Modal title</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p>
+			Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+			Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+		</p>
+		<p>
+			Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+			Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
+
+<!-- <button class="btn btn-outline-primary mb-2 me-2" (click)="openLg(content)">Large modal</button> -->
+<button class="btn btn-outline-primary mb-2 me-2" (click)="openXl(content)">Extra large modal</button>
+

@@ -1,0 +1,111 @@
+<div style="height: 5vh;"></div>
+<div class="container">
+    <h1 class="heading"style="text-align: center; color: black;">UPDATE your Product</h1>
+    <p class="message">{{messageP}}</p>
+  
+    
+    <form #addProduct="ngForm"
+      (ngSubmit)="submit()"
+       class="common-form">
+  
+      <div class="form-group row">
+        <label for="productCategory" class="col-sm-2 col-form-label">Enter Product Category</label>
+        
+        <div class="col-sm-10">
+          <!-- <input type="text" formControlName="productCategory" class="form-control" id="productCategory" placeholder="Enter Product Category" required> -->
+  
+          <select id="productCategory" class="form-control-alternative" >
+            <option value="" disabled selected>Select Product Category</option>
+    
+            <option id="productCategory"  *ngFor="let p of productCategory" [value]="p.value">{{ p.label }}</option>
+          </select>
+        </div>
+        
+        </div>
+  
+      <div class="form-group row">
+        <label for="image" class="col-sm-2 col-form-label">Upload Product Photo</label>
+        <div class="col-sm-10">
+          <!-- <input type="file" formControlName="image" class="form-control" id="image" placeholder="Enter Product Photos" required> -->
+  
+          <input
+            type="text"
+            class="form-input"
+            placeholder="Enter Product Image URL"
+            name="image"
+            class="form-control" id="image" 
+            ngModel="{{productData?.image}}"
+            />
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label for="productName" class="col-sm-2 col-form-label">Enter Product Name</label>
+        <div class="col-sm-10">
+          <!-- <input type="text" formControlName="productName" class="form-control" id="productName" placeholder="Enter Product Name" required> -->
+  
+          <input
+          type="text"
+          class="form-input"
+          placeholder="Enter Product Name"
+          name="name"
+          class="form-control" id="productName"
+          ngModel="{{productData?.productName}}"
+        />
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label for="price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+          <!-- <input type="number" formControlName="price" class="form-control" id="price" placeholder="Enter Product Price" required> -->
+          <input
+          type="text"
+          class="form-input"
+          placeholder="Enter Product Price"
+          name="price"
+         class="form-control" id="price"
+          ngModel="{{productData?.price}}"
+        />
+        </div>
+      </div>
+  
+  
+  
+      <div class="form-group row">
+        <label for="color" class="col-sm-2 col-form-label">Color</label>
+        <div class="col-sm-10">
+          <!-- <input type="text" formControlName="color" class="form-control" id="color" placeholder="Enter Product Color" required> -->
+  
+          <input
+          type="text"
+          class="form-input"
+          placeholder="Enter Product Color"
+          name="color"
+          class="form-control" id="color" 
+          ngModel="{{productData?.color}}"
+          />
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label for="desc" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <!-- <textarea formControlName="desc" class="form-control" id="desc" placeholder="Enter Product Description" required></textarea> -->
+  
+          <textarea
+          type="text"
+          class="form-input"
+          placeholder="Enter Product Description"
+          name="description"
+          class="form-control" id="desc"
+          ngModel="{{productData?.desc}}"
+          ></textarea>
+        </div>
+      </div>
+  
+      <button class="form-button cta" type="submit">UPDATE PRODUCT</button>
+    </form>
+  </div> 
+  
+  

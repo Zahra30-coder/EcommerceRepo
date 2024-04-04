@@ -1,0 +1,53 @@
+<nav class="navbar navbar-dark bg-dark sticky-top">
+    <!-- <a class="navbar-brand">E-Commerce</a> -->
+
+    <ul>
+      <li><a routerLink="/"> Home</a></li>
+        <li><a routerLink="/sellerHomePage">Seller Home</a></li>
+        <li><a routerLink="/add-product">Add Product</a></li>
+        <li><a routerLink="/prod-cat">Contact Us</a></li>
+        <li><a routerLink="/prod-det">Help</a></li>
+
+    </ul>
+
+    <div class="nav-search" *ngIf="menuType === 'default'">
+      <form class="d-flex" role="search">
+          <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search" (keyup)="searchProduct($event)">
+          
+            <a routerLink="/">
+              <i class="fas fa-search"  style="color: #fff;"></i>
+          </a>
+       
+
+
+          <!-- <ul class="suggested-result">
+              <li  *ngFor="let item as searchResult">
+                  <a>{{item.name}}</a>
+              </li>
+          </ul> -->
+
+      </form>
+  </div>
+
+    <ul>
+      <li><a routerLink="/">
+        <i class="fas fa-heart" style="color: #fff;"></i>
+      </a></li>
+
+      <li>
+          <a routerLink="/cart">
+            <i class="fas fa-shopping-cart"  style="color: #fff;"></i>
+        </a>
+     </li>
+
+      <li>
+        <a routerLink="/checkout">
+          <i class="fas fa-user"  style="color: #fff;"></i>
+
+        </a>
+      </li>
+     
+
+  </ul>
+    
+</nav>

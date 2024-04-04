@@ -1,0 +1,73 @@
+.form {
+    max-width: 700px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('https://ace.rismedia.com/wp-content/uploads/2020/05/modern-black-luxury-walk-in-closet-dressing-room-wardrobe-picture-id1189147102.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+
+.container {
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+    border: black 1px solid;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 10px 10px 5px #888888;
+   
+    
+}
+
+h1,
+p {
+    color: #34ace0;
+    text-align: center;
+}
+
+form {
+    margin-top: 0px;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: black;
+    color: #34ace0;
+    border: 1px solid #34ace0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.form-button {
+    background-color: transparent;
+    border: 1px solid #000;
+    /* Add a border to make it visible initially */
+    color: #000;
+    /* Set the initial text color */
+    transition: background-color 0.3s, color 0.3s;
+    /* Add a smooth transition effect */
+    font-size: 24px;
+
+    margin: 15px;
+    padding: 15px;
+
+}
+
+.form-button:hover {
+    background-color: black;
+    color: rgb(34, 154, 229);
+    transform: scale(1.03);
+
+}

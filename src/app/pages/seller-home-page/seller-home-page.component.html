@@ -1,0 +1,50 @@
+<div class="product-list">
+    <div style="height: 5vh;"></div>
+    <h1 class="heading" style="text-align: center;">Products Page</h1>
+    <p class="message-p">{{productMessage}}</p>
+    <div style="height: 0vh;"></div>
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-borderless">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of productList">
+                    <td><img src="{{item.image}}"></td>
+                    <td>{{item.productCategory}}</td>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.color}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.desc}}</td>
+                    <td>
+                        <fa-icon (click)="deleteProduct(item.id)">DELETE</fa-icon>
+
+                        <a (click)="deleteProduct(item.id)" class="update-icon" style="cursor: pointer;">
+
+                            <i class="fas fa-trash"  style="color: blue"></i>
+                        
+                        </a>
+
+                        &nbsp;
+
+
+                        <a [routerLink]="['/update-product', item.id]" class="update-icon">
+
+                            <i class="fas fa-pencil"  style="color: blue"></i>
+                        
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

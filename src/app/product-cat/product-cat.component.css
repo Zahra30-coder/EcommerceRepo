@@ -1,0 +1,256 @@
+ /* **************       BANNER        ******************* */
+
+ .featured {
+   height: 400px;
+   position: relative;
+   background-image: url('https://i.pinimg.com/originals/a1/5c/bc/a15cbc46ef421272a227accd9dca6a20.jpg');
+
+   background-size: cover;
+   background-position: center;
+   padding: 0 0 0 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ .featured::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 7.4rem;
+   background-image: linear-gradient(180deg,
+       transparent,
+       rgba(37, 37, 37, 0.61),
+       #111);
+ }
+
+ .featured h2 {
+   font-size: 50px;
+   margin: 0;
+   z-index: 10;
+   color: white;
+ }
+
+ .featured .featured__buttons {
+   z-index: 10;
+ }
+
+ .featured .featured__buttons button {
+   font-size: 16px;
+   color: white;
+   background-color: rgba(109, 109, 110, 0.7);
+   border: none;
+   padding: 8px 24px;
+   border-radius: 4px;
+ }
+
+ .featured::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.3);
+ }
+
+ .featured .featured__buttons .button__play {
+   background-color: white;
+   color: black;
+ }
+
+ .featured .featured__description {
+   max-width: 350px;
+   font-weight: 400;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+   z-index: 10;
+   color: white;
+ }
+
+.btn-close:hover{
+  background-color: rgba(109, 109, 110, 0.3);
+  box-shadow: none;
+}
+
+ /* off-canvas radio button  */
+ form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px; /* Optional: add some space between each checkbox and label */
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 12px; /* Optional: add space between checkbox and label text */
+}
+
+input[type="radio"] {
+  margin-right: 12px; /* Optional: add space between checkbox and label text */
+}
+
+br {
+  border-top: 1px solid rgb(206, 201, 201);
+  content: "\00a0"; /* Ensures the <br> is rendered with content for styling */
+  display: block;
+  margin: 10px 0; /* Optional: add some space above and below the <br> */
+}
+
+.filter{
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.filter:hover{
+  background-color: rgba(109, 109, 110, 0.3);
+}
+
+/* ================================= */
+.main-prod-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 10;
+
+}
+/* .prod-card{
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  flex: 2.5;
+  height: 400px;
+  width: 100px;
+} */
+
+.main-prod-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.prod-card {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  flex: 0 0 calc(33.333% - 10px); /* Adjust the percentage and margin values as needed */
+  max-width: calc(33.333% - 10px); /* Set a maximum width if necessary */
+  height: 0;
+  padding-bottom: 40%; /* Adjust the aspect ratio (height/width) as needed */
+  position: relative;
+
+}
+
+/* Add a media query for responsiveness */
+@media (max-width: 768px) {
+  .prod-card {
+    flex: 0 0 calc(50% - 10px); /* Adjust the percentage and margin values for smaller screens */
+    max-width: calc(50% - 10px); /* Set a maximum width if necessary */
+  }
+}
+
+@media (max-width: 576px) {
+  .prod-card {
+    flex: 0 0 100%; /* Adjust the percentage for even smaller screens */
+    max-width: 100%; /* Set a maximum width if necessary */
+  }
+}
+
+.prod-title{
+  color: black;
+}
+
+.prod-desc{
+  color: gray;
+}
+
+.prod-cat{
+  color: orangered;
+}
+
+.prod-price{
+  background-color: black;
+  color: white;
+}
+
+.prod-price:hover{  
+  color: blue;
+  transform: scale(1.2);
+}
+
+.prod-card-content {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* Adjust the height as needed */
+  position: relative;
+}
+
+
+/* ================================= */
+.product-item{
+  border: 1px solid black
+}
+
+.product-item .product-footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+.product-item .product-footer:hover {
+  background-color: black;
+  transform: scale(1.06);
+}
+
+.product-item .product-footer a {
+  color: grey; /* Set the initial text color */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.product-item .product-footer a:hover {
+  color: rgb(34, 154, 229);
+  
+}
+
+.product-item .product-footer span:hover {
+  color: rgb(34, 154, 229);
+  
+}
+
+.product-item .product-footer a ul li a i :hover{
+  color: rgb(34, 154, 229);
+}
+
+/* styles */
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
+
+/* making the icons white on hover */
+.product-item:hover .fa-heart,
+.product-item:hover .fa-shopping-cart {
+  color: white;
+  transform: scale(1.2);
+}
+
+.product-item ul{
+  justify-content: right;
+  margin-right: 3px;
+}
+
